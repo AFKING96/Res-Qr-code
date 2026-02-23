@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jera Restaurant - Cashier Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Serif', serif;
+        }
+        .sharp-border {
+            border: 1px solid #000000;
+        }
+        .header-border {
+            border-bottom: 2px solid #000000;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-primary min-h-screen flex">
+<nav class="w-[240px] h-screen bg-black text-white fixed left-0 top-0 flex flex-col p-8 z-50">
+<div class="mb-12">
+<h1 class="text-2xl font-black tracking-tighter uppercase italic font-display">Jera</h1>
+</div>
+<ul class="flex-grow space-y-4 font-sans uppercase tracking-widest text-sm font-bold">
+<li class="bg-white text-black p-3 cursor-pointer">Dashboard</li>
+<li class="p-3 hover:bg-white/10 cursor-pointer transition-colors">Tables</li>
+<li class="p-3 hover:bg-white/10 cursor-pointer transition-colors">Orders</li>
+<li class="p-3 hover:bg-white/10 cursor-pointer transition-colors">Payments</li>
+</ul>
+<div class="mt-auto">
+<li class="list-none p-3 hover:bg-white/10 cursor-pointer transition-colors font-sans uppercase tracking-widest text-sm font-bold flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">logout</span>
+            Logout
+        </li>
+</div>
+</nav><div class="max-w-[1200px] min-h-screen flex flex-col bg-white dark:bg-black ml-[240px] p-8">
+<!-- Header -->
+<header class="flex flex-col justify-center mb-12 border-b-2 border-primary pb-8 items-start">
+
+<h2 class="text-2xl font-bold tracking-widest uppercase">Cashier Dashboard</h2>
+<p class="text-sm opacity-60 mt-2 uppercase tracking-widest">Service Date: October 24, 2023</p>
+</header>
+<!-- Top Bar Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-primary mb-12">
+<div class="flex flex-col p-6 items-center justify-center border-b md:border-b-0 md:border-r border-primary">
+<p class="text-xs uppercase tracking-widest mb-2 font-sans font-bold">Today Revenue</p>
+<p class="text-4xl font-black">$1,200.00</p>
+</div>
+<div class="flex flex-col p-6 items-center justify-center border-b md:border-b-0 md:border-r border-primary">
+<p class="text-xs uppercase tracking-widest mb-2 font-sans font-bold">Orders Count</p>
+<p class="text-4xl font-black">15</p>
+</div>
+<div class="flex flex-col p-6 items-center justify-center">
+<p class="text-xs uppercase tracking-widest mb-2 font-sans font-bold">Top Item</p>
+<p class="text-4xl font-black italic">Americano</p>
+</div>
+</div>
+<!-- Table Grid (3x2) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Table 01 - Ordered -->
+<div class="border-2 border-primary flex flex-col min-h-[320px]">
+<div class="bg-primary text-white p-4 flex justify-between items-center">
+<span class="text-lg font-bold">TABLE 01</span>
+<span class="text-xs uppercase tracking-widest font-sans font-bold italic">Ordered</span>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-2 mb-6 font-sans">
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>2x Espresso</span>
+<span class="font-bold">$8.00</span>
+</li>
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>1x Butter Croissant</span>
+<span class="font-bold">$4.50</span>
+</li>
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>1x Eggs Benedict</span>
+<span class="font-bold">$12.00</span>
+</li>
+</ul>
+<div class="flex justify-between items-end border-t-2 border-primary pt-4">
+<span class="text-xs font-bold uppercase tracking-widest">Total</span>
+<span class="text-2xl font-black">$24.50</span>
+</div>
+</div>
+<button class="bg-primary text-white hover:bg-gray-800 transition-colors py-4 uppercase font-bold tracking-widest text-sm font-sans">
+                    Mark as Paid
+                </button>
+</div>
+<!-- Table 02 - Empty -->
+<div class="border-2 border-primary border-opacity-20 flex flex-col min-h-[320px] opacity-60 grayscale">
+<div class="border-b border-primary border-opacity-20 p-4 flex justify-between items-center bg-gray-50">
+<span class="text-lg font-bold">TABLE 02</span>
+<span class="text-xs uppercase tracking-widest font-sans font-bold">Empty</span>
+</div>
+<div class="p-6 flex-grow flex flex-col items-center justify-center italic text-gray-400">
+<span class="material-symbols-outlined text-4xl mb-2">event_seat</span>
+<p class="text-sm">Ready for service</p>
+</div>
+<button class="border-t border-primary border-opacity-20 py-4 uppercase font-bold tracking-widest text-sm font-sans hover:bg-gray-50">
+                    Open Table
+                </button>
+</div>
+<!-- Table 03 - Ordered -->
+<div class="border-2 border-primary flex flex-col min-h-[320px]">
+<div class="bg-primary text-white p-4 flex justify-between items-center">
+<span class="text-lg font-bold">TABLE 03</span>
+<span class="text-xs uppercase tracking-widest font-sans font-bold italic">Ordered</span>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-2 mb-6 font-sans">
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>1x Ribeye Steak</span>
+<span class="font-bold">$45.00</span>
+</li>
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>2x House Red Wine</span>
+<span class="font-bold">$24.00</span>
+</li>
+</ul>
+<div class="flex justify-between items-end border-t-2 border-primary pt-4">
+<span class="text-xs font-bold uppercase tracking-widest">Total</span>
+<span class="text-2xl font-black">$69.00</span>
+</div>
+</div>
+<button class="bg-primary text-white hover:bg-gray-800 transition-colors py-4 uppercase font-bold tracking-widest text-sm font-sans">
+                    Mark as Paid
+                </button>
+</div>
+<!-- Table 04 - Ordered -->
+<div class="border-2 border-primary flex flex-col min-h-[320px]">
+<div class="bg-primary text-white p-4 flex justify-between items-center">
+<span class="text-lg font-bold">TABLE 04</span>
+<span class="text-xs uppercase tracking-widest font-sans font-bold italic">Ordered</span>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-2 mb-6 font-sans">
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>3x Americano</span>
+<span class="font-bold">$13.50</span>
+</li>
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>2x Avocado Toast</span>
+<span class="font-bold">$18.00</span>
+</li>
+</ul>
+<div class="flex justify-between items-end border-t-2 border-primary pt-4">
+<span class="text-xs font-bold uppercase tracking-widest">Total</span>
+<span class="text-2xl font-black">$31.50</span>
+</div>
+</div>
+<button class="bg-primary text-white hover:bg-gray-800 transition-colors py-4 uppercase font-bold tracking-widest text-sm font-sans">
+                    Mark as Paid
+                </button>
+</div>
+<!-- Table 05 - Paid (Ready for Cleanup) -->
+<div class="border-2 border-primary flex flex-col min-h-[320px] bg-gray-50">
+<div class="border-b-2 border-primary p-4 flex justify-between items-center">
+<span class="text-lg font-bold">TABLE 05</span>
+<span class="text-xs uppercase tracking-widest font-sans font-bold">Paid</span>
+</div>
+<div class="p-6 flex-grow flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-4xl mb-2">cleaning_services</span>
+<p class="text-sm font-bold uppercase tracking-widest">Cleanup Required</p>
+<p class="text-xs italic mt-1 font-sans">Order #1042 Completed</p>
+</div>
+<button class="bg-white border-t border-primary py-4 uppercase font-bold tracking-widest text-sm font-sans hover:bg-gray-100">
+                    Clear Table
+                </button>
+</div>
+<!-- Table 06 - Ordered -->
+<div class="border-2 border-primary flex flex-col min-h-[320px]">
+<div class="bg-primary text-white p-4 flex justify-between items-center">
+<span class="text-lg font-bold">TABLE 06</span>
+<span class="text-xs uppercase tracking-widest font-sans font-bold italic">Ordered</span>
+</div>
+<div class="p-6 flex-grow">
+<ul class="space-y-2 mb-6 font-sans">
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>1x Grilled Salmon</span>
+<span class="font-bold">$22.00</span>
+</li>
+<li class="flex justify-between border-b border-gray-200 pb-1">
+<span>1x Sparkling Water</span>
+<span class="font-bold">$3.50</span>
+</li>
+</ul>
+<div class="flex justify-between items-end border-t-2 border-primary pt-4">
+<span class="text-xs font-bold uppercase tracking-widest">Total</span>
+<span class="text-2xl font-black">$25.50</span>
+</div>
+</div>
+<button class="bg-primary text-white hover:bg-gray-800 transition-colors py-4 uppercase font-bold tracking-widest text-sm font-sans">
+                    Mark as Paid
+                </button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="mt-auto pt-12 border-t border-primary border-opacity-10 flex justify-between items-center">
+<p class="text-[10px] uppercase tracking-[0.2em] font-sans font-bold opacity-40">© 2023 Jera Restaurant Management System</p>
+
+</footer>
+</div>
+</body></html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Order Tracking | Jera Restaurant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#ffffff",
+                        "background-dark": "#0a0a0a",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Serif', serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .tracking-widest-extra {
+            letter-spacing: 0.2em;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-primary dark:text-slate-100 min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="border-b border-primary/10 px-6 md:px-20 py-6 flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-slate-100" style="font-size: 28px;">restaurant</span>
+<h1 class="font-display font-black text-xl tracking-tight uppercase">Jera</h1>
+</div>
+<nav>
+<a class="font-display text-sm uppercase tracking-widest hover:opacity-60 transition-opacity" href="#">Back to Menu</a>
+</nav>
+</header>
+<main class="flex-grow flex flex-col items-center py-16 px-6">
+<!-- Page Title -->
+<div class="text-center mb-20">
+<h2 class="font-display text-4xl md:text-5xl font-black uppercase tracking-widest-extra mb-4">Order Tracking</h2>
+<div class="h-px w-24 bg-primary mx-auto"></div>
+</div>
+<!-- Timeline Container -->
+<div class="relative max-w-lg w-full">
+<!-- Vertical Line -->
+<div class="absolute left-1/2 top-0 bottom-0 w-[1px] bg-primary/20 -translate-x-1/2"></div>
+<!-- Status: Received (Checked) -->
+<div class="relative flex items-center justify-between mb-16 w-full">
+<div class="w-5/12 text-right pr-8">
+<span class="text-xs uppercase tracking-widest text-primary/40 font-sans">12:30 PM</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 bg-primary flex items-center justify-center rounded-full border border-primary">
+<span class="material-symbols-outlined text-white text-xl">check</span>
+</div>
+</div>
+<div class="w-5/12 pl-8">
+<h3 class="font-display font-bold text-lg uppercase tracking-wide">Received</h3>
+<p class="font-sans text-sm text-primary/60 mt-1">We have received your order.</p>
+</div>
+</div>
+<!-- Status: Preparing (Active) -->
+<div class="relative flex items-center justify-between mb-16 w-full">
+<div class="w-5/12 text-right pr-8">
+<span class="text-xs uppercase tracking-widest text-primary font-sans font-bold">In Progress</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 bg-background-light dark:bg-background-dark flex items-center justify-center rounded-full border-2 border-primary ring-4 ring-primary/10">
+<div class="w-3 h-3 bg-primary rounded-full"></div>
+</div>
+</div>
+<div class="w-5/12 pl-8">
+<h3 class="font-display font-bold text-lg uppercase tracking-wide">Preparing</h3>
+<p class="font-sans text-sm text-primary/60 mt-1">Our chefs are crafting your meal.</p>
+</div>
+</div>
+<!-- Status: Ready (Pending) -->
+<div class="relative flex items-center justify-between mb-16 w-full opacity-40">
+<div class="w-5/12 text-right pr-8">
+<span class="text-xs uppercase tracking-widest font-sans">Next</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 bg-background-light dark:bg-background-dark flex items-center justify-center rounded-full border border-primary/30">
+<div class="w-2 h-2 bg-primary/30 rounded-full"></div>
+</div>
+</div>
+<div class="w-5/12 pl-8">
+<h3 class="font-display font-bold text-lg uppercase tracking-wide">Ready</h3>
+<p class="font-sans text-sm mt-1">Plating and final touches.</p>
+</div>
+</div>
+<!-- Status: Served (Pending) -->
+<div class="relative flex items-center justify-between w-full opacity-40">
+<div class="w-5/12 text-right pr-8">
+<span class="text-xs uppercase tracking-widest font-sans">Final</span>
+</div>
+<div class="relative z-10">
+<div class="w-10 h-10 bg-background-light dark:bg-background-dark flex items-center justify-center rounded-full border border-primary/30">
+<div class="w-2 h-2 bg-primary/30 rounded-full"></div>
+</div>
+</div>
+<div class="w-5/12 pl-8">
+<h3 class="font-display font-bold text-lg uppercase tracking-wide">Served</h3>
+<p class="font-sans text-sm mt-1">Enjoy your experience.</p>
+</div>
+</div>
+</div>
+<!-- Order Summary Section -->
+<div class="mt-24 border-t border-primary/10 pt-12 w-full max-w-2xl grid grid-cols-1 md:grid-cols-2 gap-8 text-center uppercase tracking-widest">
+<div>
+<p class="text-xs text-primary/50 font-sans mb-2">Order Identification</p>
+<p class="text-2xl font-display font-black">#JERA-204</p>
+</div>
+<div>
+<p class="text-xs text-primary/50 font-sans mb-2">Estimated Arrival</p>
+<p class="text-2xl font-display font-black">12 Minutes</p>
+</div>
+</div>
+<!-- Action Button -->
+<div class="mt-16">
+<button class="px-10 py-4 bg-primary text-white font-display text-xs uppercase tracking-[0.3em] hover:bg-primary/90 transition-all border border-primary">
+                Contact Support
+            </button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="py-10 px-6 border-t border-primary/5 text-center">
+<p class="font-sans text-[10px] uppercase tracking-[0.5em] text-primary/40">© Jera Fine Dining Est. 2024</p>
+</footer>
+</body></html>

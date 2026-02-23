@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jera Menu - Page 1</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#ffffff",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .dotted-leader {
+            flex-grow: 1;
+            border-bottom: 1px dotted #000;
+            margin: 0 12px;
+            position: relative;
+            top: -4px;
+        }
+        .menu-item-row:hover .add-btn {
+            background-color: #000;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-primary transition-colors duration-300">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Header Section -->
+<header class="flex flex-col items-center justify-center px-6 py-10 border-b border-primary/10 relative">
+<!-- Cart Button (Top Right) -->
+<div class="absolute right-6 top-10">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center gap-2 rounded border border-primary bg-primary px-4 h-10 text-white text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-all">
+<span class="material-symbols-outlined text-lg">shopping_cart</span>
+<span class="truncate">View Cart (0)</span>
+</button>
+</div>
+<!-- Branding -->
+<div class="flex flex-col items-center text-center gap-2">
+<div class="size-12 mb-2">
+<svg class="text-primary" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
+</svg>
+</div>
+<h1 class="text-primary text-5xl font-bold tracking-tighter uppercase">Jera</h1>
+<p class="text-primary/60 text-xs tracking-[0.3em] uppercase font-sans">All Roads Lead Here</p>
+<div class="mt-4 px-3 py-1 border border-primary/20 rounded text-[10px] uppercase tracking-widest font-sans font-bold">
+                        Table 1
+                    </div>
+</div>
+</header>
+<!-- Main Menu Content -->
+<main class="flex-1 max-w-3xl mx-auto w-full px-6 py-12">
+<!-- Category: Classic -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8 border-b-2 border-primary pb-2 uppercase tracking-tight">Classic <span class="text-sm font-normal normal-case italic opacity-60 ml-2">(Hot / Iced)</span></h2>
+<div class="space-y-4">
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Espresso</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">75</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Americano</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">85</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Macchiato</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">82</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Cortado</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">90</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Cappuccino</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">100</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Flat White</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">105</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">118</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Affogato</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">110</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Turkish Coffee</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">75</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Classic Shaken Espresso</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">135</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category: Drip Coffee -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8 border-b-2 border-primary pb-2 uppercase tracking-tight">Drip Coffee <span class="text-sm font-normal normal-case italic opacity-60 ml-2">(Speciality Coffee)</span></h2>
+<div class="space-y-4">
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">V60</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">175</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Chemex</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">195</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Aeropress</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">175</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Siphon</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">200</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category: Flavoured Coffee -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8 border-b-2 border-primary pb-2 uppercase tracking-tight">Flavoured Coffee <span class="text-sm font-normal normal-case italic opacity-60 ml-2">(Hot / Iced)</span></h2>
+<div class="space-y-4">
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Caramel Macchiato</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">130</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Spanish Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">145</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Salted Caramel Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">155</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Mocha (White/Dark)</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">135</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Cinnamon Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">155</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Pistachio Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">190</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Shaken Espresso</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">150</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category: Matcha -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8 border-b-2 border-primary pb-2 uppercase tracking-tight">Matcha <span class="text-sm font-normal normal-case italic opacity-60 ml-2">(Hot / Iced)</span></h2>
+<div class="space-y-4">
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Classic Matcha Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">140</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Honey Matcha Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">150</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Vanilla Matcha Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">155</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Hazelnut Matcha Latte</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">155</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Mango Matcha</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">155</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Spanish Matcha</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">165</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Blueberry Matcha</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">165</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Strawberry Matcha</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">165</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">White Chocolate Matcha</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">165</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category: Hot Drinks -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8 border-b-2 border-primary pb-2 uppercase tracking-tight">Hot Drinks</h2>
+<div class="space-y-4">
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Hot Chocolate Classic</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">150</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Marshmallow Hot Chocolate</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">175</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">White Hot Chocolate</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">160</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Mastic Marshmallow</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">190</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">English Tea</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">50</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Flavoured Tea</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">60</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Category: Jera Refreshers -->
+<section class="mb-16">
+<h2 class="text-2xl font-bold mb-8 border-b-2 border-primary pb-2 uppercase tracking-tight">Jera Refreshers</h2>
+<div class="space-y-4">
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Milkshake</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">135</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Milkshake (Espresso)</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">175</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Fresh Juice</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">100</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Classic Mojito</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">100</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Flavoured Mojito</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">130</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Sweet &amp; Sour Mojito</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">145</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Ice Tea</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">120</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Tropical Hibiscus</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">150</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Redbull</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">110</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<div class="flex items-end menu-item-row group cursor-default">
+<span class="text-lg font-medium">Soft Drinks</span>
+<div class="dotted-leader"></div>
+<span class="text-lg font-bold mr-4">45</span>
+<button class="add-btn size-8 border border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Bottom Info -->
+<div class="text-center py-12 border-t border-primary/10">
+<p class="text-sm italic opacity-70 mb-8">All milk alternatives are available</p>
+<button class="group flex items-center justify-center gap-4 mx-auto min-w-[200px] border-2 border-primary bg-primary py-4 px-8 text-white hover:bg-white hover:text-primary transition-all rounded-lg">
+<span class="font-bold tracking-widest uppercase">Next Page</span>
+<span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</main>
+<!-- Final Footer Space -->
+<footer class="py-10 bg-primary text-white text-center">
+<p class="text-[10px] tracking-[0.4em] uppercase opacity-50">Jera Restaurant © 2024</p>
+</footer>
+</div>
+</div>
+</body></html>

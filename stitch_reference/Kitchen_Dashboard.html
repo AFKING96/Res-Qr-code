@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jera Restaurant - Kitchen Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#000000",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#191919",
+                    },
+                    fontFamily: {
+                        "display": ["Noto Serif", "serif"],
+                        "sans": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Serif', serif;
+        }
+        .order-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-primary min-h-screen">
+<div class="relative flex min-h-screen w-full bg-white group/design-root overflow-x-hidden font-display"><aside class="w-[240px] bg-black text-white h-screen sticky top-0 flex flex-col shrink-0 z-20">
+<div class="p-8">
+<h2 class="text-2xl font-black uppercase tracking-[0.2em] font-display">Jera</h2>
+</div>
+<nav class="mt-8 flex-grow">
+<ul class="space-y-2 px-4">
+<li>
+<a class="flex items-center px-4 py-3 bg-white text-black font-bold uppercase tracking-widest text-xs" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-xs" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">list_alt</span>
+                    Active Orders
+                </a>
+</li>
+<li>
+<a class="flex items-center px-4 py-3 hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-xs" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">history</span>
+                    Order History
+                </a>
+</li>
+</ul>
+</nav>
+<div class="p-4 border-t border-white/10">
+<a class="flex items-center px-4 py-3 hover:bg-white/10 transition-colors font-bold uppercase tracking-widest text-xs text-white/60 hover:text-white" href="#">
+<span class="material-symbols-outlined mr-3 text-sm">logout</span>
+            Logout
+        </a>
+</div>
+</aside>
+<div class="layout-container flex h-full grow flex-col">
+<!-- Top Navigation / Header -->
+<header class="flex items-center justify-between border-b border-primary/10 px-6 py-4 bg-white sticky top-0 z-10"><h1 class="text-2xl font-black uppercase tracking-tighter">Kitchen Dashboard</h1>
+
+
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 border-r border-primary/10 pr-6">
+<span class="material-symbols-outlined text-sm">schedule</span>
+<span class="text-sm font-bold tracking-widest">19:42:05</span>
+</div>
+<div class="flex gap-4">
+<button class="flex items-center justify-center size-10 bg-primary/5 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex items-center justify-center size-10 bg-primary/5 hover:bg-primary hover:text-white transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Status Tabs -->
+<div class="px-6 py-2 bg-white border-b border-primary/10">
+<div class="flex gap-8">
+<a class="border-b-2 border-primary py-3 text-sm font-bold uppercase tracking-widest" href="#">Active Orders (8)</a>
+<a class="border-b-2 border-transparent py-3 text-sm font-bold uppercase tracking-widest text-primary/40 hover:text-primary transition-colors" href="#">In Preparation (3)</a>
+<a class="border-b-2 border-transparent py-3 text-sm font-bold uppercase tracking-widest text-primary/40 hover:text-primary transition-colors" href="#">Ready to Serve (5)</a>
+<a class="border-b-2 border-transparent py-3 text-sm font-bold uppercase tracking-widest text-primary/40 hover:text-primary transition-colors" href="#">History</a>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="p-8 bg-background-light flex-grow flex flex-col items-center">
+<div class="order-grid max-w-[1200px] w-full">
+<!-- Order Card 1 (New) -->
+<div class="bg-white border-2 border-primary flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="p-4 border-b border-primary/10 flex justify-between items-start">
+<div>
+<h3 class="text-3xl font-black">Table 12</h3>
+<p class="text-xs uppercase font-bold tracking-widest text-primary/60">Server: Marc A.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black tracking-tighter">05:22</span>
+<span class="text-[10px] uppercase font-bold bg-primary text-white px-1.5 py-0.5 mt-1">New Order</span>
+</div>
+</div>
+<div class="p-4 flex-grow space-y-3">
+<div class="flex justify-between items-baseline group">
+<p class="text-lg leading-tight"><span class="font-black mr-2">2x</span> Beef Tartare</p>
+<span class="text-xs text-primary/40 italic">Appetizer</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">1x</span> Roasted Sea Bass</p>
+<span class="text-xs text-primary/40 italic">Main</span>
+</div>
+<div class="mt-4 p-3 bg-primary/5 border-l-4 border-primary italic text-sm">
+<p class="font-bold not-italic text-[10px] uppercase mb-1">Kitchen Notes:</p>
+                                "No nuts, extra lemon on the side for the bass please."
+                            </div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-2 mt-auto">
+<button class="bg-primary text-white py-3 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-primary border-2 border-primary transition-all">Start Preparing</button>
+<button class="bg-white text-primary py-3 text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white border-2 border-primary transition-all">Ready</button>
+</div>
+</div>
+<!-- Order Card 2 (In Progress) -->
+<div class="bg-white border-2 border-primary flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="p-4 border-b border-primary/10 flex justify-between items-start">
+<div>
+<h3 class="text-3xl font-black">Table 04</h3>
+<p class="text-xs uppercase font-bold tracking-widest text-primary/60">Server: Elena S.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black tracking-tighter underline decoration-2">12:45</span>
+<span class="text-[10px] uppercase font-bold bg-primary/10 text-primary px-1.5 py-0.5 mt-1">In Progress</span>
+</div>
+</div>
+<div class="p-4 flex-grow space-y-3">
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">4x</span> Truffle Risotto</p>
+<span class="text-xs text-primary/40 italic">Main</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">1x</span> Seasonal Greens</p>
+<span class="text-xs text-primary/40 italic">Side</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">2x</span> Ribeye Steak (Med-Rare)</p>
+<span class="text-xs text-primary/40 italic">Main</span>
+</div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-2 mt-auto">
+<button class="bg-white text-primary py-3 text-xs font-black uppercase tracking-widest opacity-30 cursor-not-allowed border-2 border-primary" disabled="">Preparing...</button>
+<button class="bg-primary text-white py-3 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-primary border-2 border-primary transition-all">Ready</button>
+</div>
+</div>
+<!-- Order Card 3 (Rush/Warning) -->
+<div class="bg-white border-2 border-primary flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="p-4 border-b-4 border-primary flex justify-between items-start">
+<div>
+<h3 class="text-3xl font-black">Table 21</h3>
+<p class="text-xs uppercase font-bold tracking-widest text-primary/60">Server: Marc A.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black tracking-tighter animate-pulse text-primary">18:02</span>
+<span class="text-[10px] uppercase font-bold bg-primary text-white px-1.5 py-0.5 mt-1">Delayed</span>
+</div>
+</div>
+<div class="p-4 flex-grow space-y-3">
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">1x</span> Chef's Tasting Menu</p>
+<span class="text-xs text-primary/40 italic">7 Courses</span>
+</div>
+<div class="mt-4 p-3 bg-primary/5 border-l-4 border-primary italic text-sm">
+<p class="font-bold not-italic text-[10px] uppercase mb-1">Kitchen Notes:</p>
+                                "VIP Table. Course 3 needs to be served immediately."
+                            </div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-2 mt-auto">
+<button class="bg-primary text-white py-3 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-primary border-2 border-primary transition-all">Start Preparing</button>
+<button class="bg-white text-primary py-3 text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white border-2 border-primary transition-all">Ready</button>
+</div>
+</div>
+<!-- Order Card 4 -->
+<div class="bg-white border-2 border-primary flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="p-4 border-b border-primary/10 flex justify-between items-start">
+<div>
+<h3 class="text-3xl font-black">Table 09</h3>
+<p class="text-xs uppercase font-bold tracking-widest text-primary/60">Server: Elena S.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black tracking-tighter">02:15</span>
+<span class="text-[10px] uppercase font-bold bg-primary text-white px-1.5 py-0.5 mt-1">New Order</span>
+</div>
+</div>
+<div class="p-4 flex-grow space-y-3">
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">3x</span> Oysters Rockefeller</p>
+<span class="text-xs text-primary/40 italic">Appetizer</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">1x</span> Chardonnay Steam Mussels</p>
+<span class="text-xs text-primary/40 italic">Appetizer</span>
+</div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-2 mt-auto">
+<button class="bg-primary text-white py-3 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-primary border-2 border-primary transition-all">Start Preparing</button>
+<button class="bg-white text-primary py-3 text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white border-2 border-primary transition-all">Ready</button>
+</div>
+</div>
+<!-- Order Card 5 -->
+<div class="bg-white border-2 border-primary flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="p-4 border-b border-primary/10 flex justify-between items-start">
+<div>
+<h3 class="text-3xl font-black">Table 15</h3>
+<p class="text-xs uppercase font-bold tracking-widest text-primary/60">Server: Marc A.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black tracking-tighter underline decoration-2">08:40</span>
+<span class="text-[10px] uppercase font-bold bg-primary/10 text-primary px-1.5 py-0.5 mt-1">In Progress</span>
+</div>
+</div>
+<div class="p-4 flex-grow space-y-3">
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">2x</span> Duck Confit</p>
+<span class="text-xs text-primary/40 italic">Main</span>
+</div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-2 mt-auto">
+<button class="bg-white text-primary py-3 text-xs font-black uppercase tracking-widest opacity-30 cursor-not-allowed border-2 border-primary" disabled="">Preparing...</button>
+<button class="bg-primary text-white py-3 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-primary border-2 border-primary transition-all">Ready</button>
+</div>
+</div>
+<!-- Order Card 6 -->
+<div class="bg-white border-2 border-primary flex flex-col h-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+<div class="p-4 border-b border-primary/10 flex justify-between items-start">
+<div>
+<h3 class="text-3xl font-black">Table 02</h3>
+<p class="text-xs uppercase font-bold tracking-widest text-primary/60">Server: Elena S.</p>
+</div>
+<div class="flex flex-col items-end">
+<span class="text-2xl font-black tracking-tighter">00:45</span>
+<span class="text-[10px] uppercase font-bold bg-primary text-white px-1.5 py-0.5 mt-1">New Order</span>
+</div>
+</div>
+<div class="p-4 flex-grow space-y-3">
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">1x</span> Chocolate Soufflé</p>
+<span class="text-xs text-primary/40 italic">Dessert</span>
+</div>
+<div class="flex justify-between items-baseline">
+<p class="text-lg leading-tight"><span class="font-black mr-2">1x</span> Cheese Board</p>
+<span class="text-xs text-primary/40 italic">Dessert</span>
+</div>
+</div>
+<div class="p-4 grid grid-cols-2 gap-2 mt-auto">
+<button class="bg-primary text-white py-3 text-xs font-black uppercase tracking-widest hover:bg-white hover:text-primary border-2 border-primary transition-all">Start Preparing</button>
+<button class="bg-white text-primary py-3 text-xs font-black uppercase tracking-widest hover:bg-primary hover:text-white border-2 border-primary transition-all">Ready</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Stats -->
+<footer class="bg-primary text-white px-6 py-4 flex justify-between items-center text-[10px] font-bold uppercase tracking-[0.2em]">
+<div class="flex gap-12">
+<div class="flex flex-col">
+<span class="text-white/50 mb-1">Avg. Prep Time</span>
+<span>14m 22s</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white/50 mb-1">Orders Today</span>
+<span>142</span>
+</div>
+<div class="flex flex-col">
+<span class="text-white/50 mb-1">Kitchen Capacity</span>
+<span>78%</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="size-2 rounded-full bg-green-500 animate-pulse"></div>
+<span>System Live</span>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

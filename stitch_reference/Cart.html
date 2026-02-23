@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cart - Jera Restaurant</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Noto+Sans:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#000000",
+              "background-light": "#ffffff",
+              "background-dark": "#191919",
+            },
+            fontFamily: {
+              "display": ["Noto Serif", "serif"],
+              "sans": ["Noto Sans", "sans-serif"]
+            },
+            borderRadius: {
+              "DEFAULT": "0px", 
+              "lg": "0px", 
+              "xl": "0px", 
+              "full": "9999px"
+            },
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Noto Serif', serif;
+        }
+        .material-symbols-outlined {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light text-primary min-h-screen flex flex-col">
+<!-- Top Navigation -->
+<header class="border-b border-primary/10 px-6 py-6 sticky top-0 bg-white z-50">
+<div class="max-w-4xl mx-auto flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined">restaurant</span>
+<h1 class="text-xl font-bold tracking-tighter uppercase">Jera</h1>
+</div>
+<nav class="hidden md:flex gap-8 text-xs uppercase tracking-widest font-sans font-bold">
+<a class="hover:underline" href="#">Menu</a>
+<a class="hover:underline" href="#">Reservations</a>
+<a class="hover:underline" href="#">About</a>
+</nav>
+<div class="flex gap-4">
+<button class="p-1 hover:opacity-60 transition-opacity">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="p-1 hover:opacity-60 transition-opacity relative">
+<span class="material-symbols-outlined">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full font-sans">2</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-grow flex flex-col items-center py-12 px-6">
+<div class="w-full max-w-2xl">
+<!-- Page Title -->
+<div class="text-center mb-16">
+<h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-2">Cart</h2>
+<div class="h-1 w-12 bg-primary mx-auto"></div>
+</div>
+<!-- Cart Items List -->
+<div class="space-y-0 border-t border-primary">
+<!-- Item 1: Americano -->
+<div class="flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-primary/10 gap-6">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 bg-primary/5 flex-shrink-0">
+<img alt="Hot Americano Coffee" class="w-full h-full object-cover grayscale" data-alt="A steaming cup of black coffee" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAa1drBiwIy-fwuou4mki68u0hlTa5xvIXq0A1ERH5T8etjLuM1y7jaJNepzgVFt0cAAHZy10As6ioZ-cMMFDjkrcA0GBtltzKC2Z4-UTpesQsrUWr-W7klP6-oK9XT40XxDtArefAhp1DZOQlER9ZvSgHcwqzBB9gTM1H2kJQc0uTLPiECDjB3tROtg9EdC5jUaqB0YPTkTqoS8ns_NsOenEIY102QRIpyU6LAbPtRymtFtqAzPpUIgHv0Wtt5AhD3lByIFcb3CEI"/>
+</div>
+<div>
+<h3 class="text-xl font-bold italic">Americano</h3>
+<p class="text-sm font-sans text-primary/60 mt-1">Single Origin Roast</p>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-12">
+<!-- Quantity Control -->
+<div class="flex items-center border border-primary h-10 px-2">
+<button class="w-8 h-full flex items-center justify-center hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 text-center border-none focus:ring-0 font-sans text-sm font-bold" readonly="" type="text" value="1"/>
+<button class="w-8 h-full flex items-center justify-center hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<!-- Price & Remove -->
+<div class="flex flex-col items-end gap-1">
+<span class="text-lg font-bold">$40.00</span>
+<button class="text-[10px] uppercase tracking-widest font-sans font-bold border-b border-primary hover:text-primary/40 hover:border-primary/40 transition-colors">
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+<!-- Item 2: Brownies -->
+<div class="flex flex-col md:flex-row md:items-center justify-between py-8 border-b border-primary/10 gap-6">
+<div class="flex items-center gap-6">
+<div class="w-20 h-20 bg-primary/5 flex-shrink-0">
+<img alt="Chocolate Brownies" class="w-full h-full object-cover grayscale" data-alt="Gourmet chocolate brownie squares on a plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXOqZ57T4357BwpWyIQKZj329psYpjkmjTQkGJfDhZtWt7YLL_5HBE4265wc7va7TXjJYfZLg9fdsWLQ_IiVojxASt31E2GShf-uKBF2VNH8HTPj4cPLUiTB3D1IiVBB3utrYPWQZ7UNswiopSp-w5J4q7iXopaS5PkO7D8SxtZqFIBu4iqwO5EgXNajYlQP-KQYixrJSirFOxKaVOawZQb_izmP2S_xNRvxZ10ABL6xXvXjmifAEehp-xEY0VNjIKwZcIYdbpQAaV"/>
+</div>
+<div>
+<h3 class="text-xl font-bold italic">Brownies</h3>
+<p class="text-sm font-sans text-primary/60 mt-1">Rich Dark Chocolate</p>
+</div>
+</div>
+<div class="flex items-center justify-between md:justify-end gap-12">
+<!-- Quantity Control -->
+<div class="flex items-center border border-primary h-10 px-2">
+<button class="w-8 h-full flex items-center justify-center hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-sm">remove</span>
+</button>
+<input class="w-8 text-center border-none focus:ring-0 font-sans text-sm font-bold" readonly="" type="text" value="2"/>
+<button class="w-8 h-full flex items-center justify-center hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined text-sm">add</span>
+</button>
+</div>
+<!-- Price & Remove -->
+<div class="flex flex-col items-end gap-1">
+<span class="text-lg font-bold">$170.00</span>
+<button class="text-[10px] uppercase tracking-widest font-sans font-bold border-b border-primary hover:text-primary/40 hover:border-primary/40 transition-colors">
+                                Remove
+                            </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Summary Section -->
+<div class="mt-12 space-y-8">
+<div class="flex justify-between items-baseline border-t-2 border-primary pt-6">
+<span class="text-sm uppercase tracking-[0.2em] font-sans font-bold">Subtotal</span>
+<span class="text-4xl font-bold">$210.00</span>
+</div>
+<div class="pt-4">
+<button class="w-full bg-primary text-white py-6 text-xs uppercase tracking-[0.3em] font-sans font-black hover:bg-primary/90 transition-all flex items-center justify-center gap-4">
+                        Confirm Order
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="text-center pt-4">
+<a class="text-[10px] uppercase tracking-widest font-sans font-bold text-primary/40 hover:text-primary transition-colors" href="#">
+                        Continue Shopping
+                    </a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="py-12 px-6 border-t border-primary/5 mt-auto bg-primary/5">
+<div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex items-center gap-2 grayscale opacity-50">
+<span class="material-symbols-outlined">restaurant</span>
+<span class="font-bold tracking-tighter uppercase text-sm">Jera</span>
+</div>
+<div class="flex gap-8 text-[10px] uppercase tracking-widest font-sans font-bold opacity-40">
+<span>Privacy</span>
+<span>Terms</span>
+<span>Contact</span>
+</div>
+<p class="text-[10px] uppercase tracking-widest font-sans font-bold opacity-40">
+                © 2024 Jera Restaurant. All rights reserved.
+            </p>
+</div>
+</footer>
+</body></html>
