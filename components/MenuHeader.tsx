@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function MenuHeader() {
     const { items, lastAddedItem } = useCart();
@@ -36,8 +37,18 @@ export function MenuHeader() {
                         <path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
                     </svg>
                 </div>
-                <h1 className="text-primary text-5xl font-bold tracking-tighter uppercase font-display">Jera</h1>
-                <p className="text-primary/60 text-xs tracking-[0.3em] uppercase font-sans">All Roads Lead Here</p>
+                <Link href="/">
+                    <h1 className="sr-only">Jera</h1>
+                    <Image
+                        src="/jera-logo.png"
+                        alt="Jera"
+                        width={120}
+                        height={40}
+                        priority
+                        className="mx-auto"
+                    />
+                </Link>
+                <p className="text-primary/60 text-xs tracking-[0.3em] uppercase font-sans mt-2">All Roads Lead Here</p>
                 <div className="mt-4 px-3 py-1 border border-primary/20 text-[10px] uppercase tracking-widest font-sans font-bold">
                     Table 1
                 </div>
