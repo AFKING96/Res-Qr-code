@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Noto_Serif, Noto_Sans } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/context/CartContext";
+import PageTransition from "@/components/PageTransition";
+import { CartPopup } from "@/components/CartPopup";
+import { RevyButton } from "@/components/RevyButton";
 
 const notoSerif = Noto_Serif({
     subsets: ["latin"],
@@ -29,7 +32,11 @@ export default function RootLayout({
         <html lang="en" className="light">
             <body className={`${notoSerif.variable} ${notoSans.variable} font-sans`}>
                 <CartProvider>
-                    {children}
+                    <PageTransition>
+                        {children}
+                    </PageTransition>
+                    <CartPopup />
+                    <RevyButton />
                 </CartProvider>
             </body>
         </html>

@@ -17,12 +17,14 @@ type CartContextType = {
     decreaseQuantity: (id: string) => void;
     total: number;
     clearCart: () => void;
+    lastAddedItem: { name: string; timestamp: number } | null;
 };
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export function CartProvider({ children }: { children: React.ReactNode }) {
     const [items, setItems] = useState<CartItem[]>([]);
+    const [lastAddedItem, setLastAddedItem] = useState<{ name: string; timestamp: number } | null>(null);
 
     useEffect(() => {
         const saved = localStorage.getItem("cart");
@@ -43,6 +45,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
             }
             return [...prev, { ...item, quantity: 1 }];
         });
+        setLastAddedItem({ name: item.name, timestamp: Date.now() });
     };
 
     const removeItem = (id: string) => {
@@ -77,6 +80,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
                 decreaseQuantity,
                 total,
                 clearCart,
+                lastAddedItem,
             }}
         >
             {children}

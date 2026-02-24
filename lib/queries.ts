@@ -31,6 +31,6 @@ export async function getAllMenuItems(): Promise<MenuItem[]> {
     category,
     "imageUrl": image.asset->url
   }`;
-  // By default Next.js caches fetch requests. We bypass this to always get fresh Sanity data.
-  return client.fetch(query, {}, { cache: 'no-store' });
+  // Cache fetch requests for 60 seconds to improve initial page load speed
+  return client.fetch(query, {}, { next: { revalidate: 60 } });
 }

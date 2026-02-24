@@ -3,6 +3,7 @@
 import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
+import { OrderConfirmationSkeleton } from "@/components/OrderConfirmationSkeleton";
 
 type OrderItem = {
     _id: string;
@@ -23,6 +24,8 @@ function ConfirmationContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const [order, setOrder] = useState<Order | null>(null);
+    const [selectedPayment, setSelectedPayment] = useState<string | null>(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const id = searchParams.get("orderId");
@@ -46,14 +49,18 @@ function ConfirmationContent() {
         } else {
             router.push("/menu/1");
         }
+        setLoading(false);
     }, [searchParams, router]);
 
-    if (!order) {
-        return (
-            <div className="bg-background-light min-h-screen flex items-center justify-center">
-                <p className="text-primary font-sans font-bold uppercase tracking-widest text-sm animate-pulse">Loading Order Details...</p>
-            </div>
-        );
+    const handlePayment = (method: string) => {
+        setSelectedPayment(method);
+        setTimeout(() => {
+            router.push(`/order-tracking?orderId=${order?.id}`);
+        }, 600);
+    };
+
+    if (loading || !order) {
+        return <OrderConfirmationSkeleton />;
     }
 
     return (
@@ -133,14 +140,35 @@ function ConfirmationContent() {
                         </div>
                     </div>
 
-                    {/* Action Button */}
+                    {/* Payment Selection */}
                     <div className="mt-12">
-                        <button
-                            onClick={() => router.push(`/order-tracking?orderId=${order.id}`)}
-                            className="w-full bg-primary text-white py-5 font-sans font-bold uppercase tracking-[0.3em] hover:bg-white hover:text-primary border border-primary transition-colors duration-300 flex items-center justify-center gap-2"
-                        >
-                            <span>TRACK ORDER</span>
-                        </button>
+                        <h3 className="text-lg font-display font-bold border-b border-primary pb-2 mb-6">Select Payment Method</h3>
+                        <div className="grid grid-cols-2 gap-4">
+                            {['CASH', 'VISA'].map((method) => {
+                                const isSelected = selectedPayment === method;
+                                return (
+                                    <button
+                                        key={method}
+                                        onClick={() => handlePayment(method)}
+                                        disabled={selectedPayment !== null}
+                                        className={`relative flex flex-col items-center justify-center p-6 border-[3px] transition-all font-sans font-bold uppercase tracking-[0.2em] ${isSelected
+                                            ? "border-primary bg-primary/10 text-primary shadow-[4px_4px_0_0_var(--color-primary,theme(colors.black))]"
+                                            : "border-primary text-primary hover:bg-primary/5 hover:shadow-[4px_4px_0_0_var(--color-primary,theme(colors.black))] bg-white"
+                                            }`}
+                                    >
+                                        <span className="text-xl md:text-2xl mb-4 font-display">{method}</span>
+                                        <div className="h-6 flex items-center justify-center">
+                                            {isSelected ? (
+                                                <div className="flex items-center gap-3">
+                                                    <span className="font-bold text-lg">✓</span>
+                                                    <div className="w-5 h-5 border-[3px] border-primary border-t-transparent animate-spin"></div>
+                                                </div>
+                                            ) : null}
+                                        </div>
+                                    </button>
+                                );
+                            })}
+                        </div>
                     </div>
 
                     <div className="mt-8 text-center">
@@ -177,11 +205,7 @@ function ConfirmationContent() {
 
 export default function OrderConfirmationPage() {
     return (
-        <Suspense fallback={
-            <div className="bg-background-light min-h-screen flex items-center justify-center">
-                <p className="text-primary font-sans font-bold uppercase tracking-widest text-sm animate-pulse">Loading Order Details...</p>
-            </div>
-        }>
+        <Suspense fallback={<OrderConfirmationSkeleton />}>
             <ConfirmationContent />
         </Suspense>
     );

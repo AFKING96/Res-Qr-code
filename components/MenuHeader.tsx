@@ -2,17 +2,33 @@
 
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export function MenuHeader() {
-    const { items } = useCart();
+    const { items, lastAddedItem } = useCart();
     const itemCount = items.reduce((total, item) => total + item.quantity, 0);
+    const [isBouncing, setIsBouncing] = useState(false);
+
+    useEffect(() => {
+        if (lastAddedItem) {
+            setIsBouncing(true);
+            const timeout = setTimeout(() => setIsBouncing(false), 300);
+            return () => clearTimeout(timeout);
+        }
+    }, [lastAddedItem]);
 
     return (
         <header className="flex flex-col items-center justify-center px-6 py-10 border-b border-primary/10 relative">
             <div className="absolute right-6 top-10">
-                <Link href="/cart" className="flex min-w-[120px] cursor-pointer items-center justify-center gap-2 border border-primary bg-primary px-4 h-10 text-white text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-all">
-                    <span className="truncate">VIEW CART ({itemCount})</span>
-                </Link>
+                <motion.div
+                    animate={isBouncing ? { y: [0, -10, 0] } : {}}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                    <Link href="/cart" className="flex min-w-[120px] cursor-pointer items-center justify-center gap-2 border border-primary bg-primary px-4 h-10 text-white text-sm font-bold tracking-widest uppercase hover:bg-white hover:text-primary transition-all">
+                        <span className="truncate">VIEW CART ({itemCount})</span>
+                    </Link>
+                </motion.div>
             </div>
             <div className="flex flex-col items-center text-center gap-2">
                 <div className="size-12 mb-2">
