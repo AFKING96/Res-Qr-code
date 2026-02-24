@@ -12,7 +12,7 @@ function TrackingContent() {
     useEffect(() => {
         const id = searchParams.get("orderId");
         if (!id) {
-            router.push("/menu/1");
+            router.push("/menu");
         } else {
             setOrderId(id);
         }
@@ -35,7 +35,7 @@ function TrackingContent() {
                     <h1 className="font-display font-black text-xl tracking-tight uppercase">Jera</h1>
                 </div>
                 <nav>
-                    <Link className="font-sans text-sm uppercase tracking-widest font-bold hover:opacity-60 transition-opacity" href="/menu/1">Back to Menu</Link>
+                    <Link className="font-sans text-sm uppercase tracking-widest font-bold hover:opacity-60 transition-opacity" href="/menu">Back to Menu</Link>
                 </nav>
             </header>
 

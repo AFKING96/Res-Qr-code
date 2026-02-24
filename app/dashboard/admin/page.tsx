@@ -15,7 +15,7 @@ export default function AdminDashboard() {
     useEffect(() => {
         let identifier = qrTable;
         if (identifier === "takeaway") identifier = "takeaway";
-        const url = `http://localhost:3000/menu/1?table=${identifier}`;
+        const url = `http://localhost:3000/menu?table=${identifier}`;
         QRCode.toDataURL(url, { width: 400, margin: 2, color: { dark: '#000000', light: '#ffffff' } }, (err, url) => {
             if (!err) setQrDataUrl(url);
         });

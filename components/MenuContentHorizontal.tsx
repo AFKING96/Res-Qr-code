@@ -61,8 +61,8 @@ export default function MenuContentHorizontal({ allItems }: { allItems: any[] })
     return (
         <div className="relative">
             {/* Sticky Horizontal Category Bar */}
-            <div className="sticky top-0 z-50 bg-background-light dark:bg-background-dark py-4 border-b-2 border-primary/20 mb-12 shadow-sm">
-                <div className="flex gap-6 lg:gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide px-2 items-center">
+            <div className="sticky top-0 z-50 bg-background-light dark:bg-background-dark py-4 border-b border-black/10 dark:border-white/10 mb-12">
+                <div className="flex gap-8 overflow-x-auto whitespace-nowrap scrollbar-hide px-6 items-center snap-x snap-mandatory">
                     {categories.map((cat) => {
                         const itemsLength = allItems.filter(i => i.category?.toLowerCase() === cat.id.toLowerCase()).length;
                         if (itemsLength === 0) return null; // Only show categories with items
@@ -71,9 +71,9 @@ export default function MenuContentHorizontal({ allItems }: { allItems: any[] })
                             <button
                                 key={cat.id}
                                 onClick={() => scrollToCategory(cat.id)}
-                                className={`text-sm md:text-base font-bold tracking-widest uppercase font-sans pb-2 border-b-2 transition-all duration-300 ${activeCategory === cat.id
-                                        ? "border-primary text-primary"
-                                        : "border-transparent text-primary/50 hover:text-primary"
+                                className={`snap-start text-sm md:text-base font-medium tracking-wide uppercase font-sans pb-2 transition-colors ${activeCategory === cat.id
+                                        ? "text-black dark:text-white border-b-2 border-black dark:border-white"
+                                        : "text-gray-500 hover:text-black dark:hover:text-white"
                                     }`}
                             >
                                 {cat.label}

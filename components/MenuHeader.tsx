@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import Image from "next/image";
+
 
 export function MenuHeader() {
     const { items, lastAddedItem } = useCart();
@@ -38,15 +38,9 @@ export function MenuHeader() {
                     </svg>
                 </div>
                 <Link href="/">
-                    <h1 className="sr-only">Jera</h1>
-                    <Image
-                        src="/jera-logo.png"
-                        alt="Jera"
-                        width={120}
-                        height={40}
-                        priority
-                        className="mx-auto"
-                    />
+                    <h1 className="text-4xl font-bold tracking-tighter uppercase font-display mt-2">
+                        Jera
+                    </h1>
                 </Link>
                 <p className="text-primary/60 text-xs tracking-[0.3em] uppercase font-sans mt-2">All Roads Lead Here</p>
                 <div className="mt-4 px-3 py-1 border border-primary/20 text-[10px] uppercase tracking-widest font-sans font-bold">

@@ -30,7 +30,7 @@ function ConfirmationContent() {
     useEffect(() => {
         const id = searchParams.get("orderId");
         if (!id) {
-            router.push("/menu/1");
+            router.push("/menu");
             return;
         }
 
@@ -73,7 +73,7 @@ function ConfirmationContent() {
                         <h1 className="text-xl font-bold tracking-tighter uppercase font-display">Jera</h1>
                     </div>
                     <nav className="hidden md:flex gap-8 text-sm uppercase tracking-widest font-sans font-medium">
-                        <Link className="hover:underline" href="/menu/1">Menu</Link>
+                        <Link className="hover:underline" href="/menu">Menu</Link>
                         <a className="hover:underline" href="#">Reservations</a>
                         <a className="hover:underline" href="#">Contact</a>
                     </nav>
@@ -182,7 +182,7 @@ function ConfirmationContent() {
                 <div className="mt-12 text-center max-w-xs">
                     <p className="text-sm font-sans text-primary/60 leading-relaxed">
                         Need assistance with your order?<br />
-                        <a className="text-primary font-bold underline underline-offset-4" href="#">Call the Waitstaff</a> or <Link className="text-primary font-bold underline underline-offset-4" href="/menu/1">View Menu</Link>
+                        <a className="text-primary font-bold underline underline-offset-4" href="#">Call the Waitstaff</a> or <Link className="text-primary font-bold underline underline-offset-4" href="/menu">View Menu</Link>
                     </p>
                 </div>
             </main>

@@ -14,7 +14,7 @@ export default function AdminQRGeneratorPage() {
         if (identifier === "takeaway") {
             identifier = "takeaway";
         }
-        const url = `http://localhost:3000/menu/1?table=${identifier}`;
+        const url = `http://localhost:3000/menu?table=${identifier}`;
 
         QRCode.toDataURL(url, {
             width: 800,

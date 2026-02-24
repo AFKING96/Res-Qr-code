@@ -8,7 +8,7 @@ export default function Home() {
 
     useEffect(() => {
         // Automatically redirect to the first menu page when someone visits the root URL
-        router.push("/menu/1");
+        router.push("/menu");
     }, [router]);
 
     return (

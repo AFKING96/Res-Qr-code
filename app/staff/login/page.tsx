@@ -120,7 +120,7 @@ export default function StaffLoginPage() {
 
                     {/* Back to Site Link */}
                     <div className="mt-8 text-center">
-                        <Link href="/menu/1" className="text-xs uppercase tracking-widest hover:underline opacity-50 flex items-center justify-center gap-1 font-sans font-bold">
+                        <Link href="/menu" className="text-xs uppercase tracking-widest hover:underline opacity-50 flex items-center justify-center gap-1 font-sans font-bold">
                             <span className="material-symbols-outlined text-sm">arrow_back</span>
                             Return to Public Website
                         </Link>

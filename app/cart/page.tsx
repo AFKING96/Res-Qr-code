@@ -47,7 +47,7 @@ export default function CartPage() {
                             <h1 className="text-xl font-bold tracking-tighter uppercase font-display">Jera</h1>
                         </div>
                         <nav className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-sans font-bold">
-                            <Link className="hover:underline" href="/menu/1">Menu</Link>
+                            <Link className="hover:underline" href="/menu">Menu</Link>
                             <a className="hover:underline" href="#">Reservations</a>
                             <a className="hover:underline" href="#">About</a>
                         </nav>
@@ -68,7 +68,7 @@ export default function CartPage() {
                     </div>
                     <p className="text-primary/60 mb-8 font-sans">Your cart is currently empty.</p>
                     <Link
-                        href="/menu/1"
+                        href="/menu"
                         className="bg-primary text-white px-8 py-4 font-bold uppercase tracking-widest text-xs font-sans hover:bg-white hover:text-primary transition-all border-2 border-primary group flex items-center gap-4"
                     >
                         <span>Return to Menu</span>
@@ -89,7 +89,7 @@ export default function CartPage() {
                         <h1 className="text-xl font-bold tracking-tighter uppercase font-display">Jera</h1>
                     </div>
                     <nav className="hidden md:flex gap-8 text-xs uppercase tracking-widest font-sans font-bold">
-                        <Link className="hover:underline" href="/menu/1">Menu</Link>
+                        <Link className="hover:underline" href="/menu">Menu</Link>
                         <a className="hover:underline" href="#">Reservations</a>
                         <a className="hover:underline" href="#">About</a>
                     </nav>
@@ -167,7 +167,7 @@ export default function CartPage() {
                             </button>
                         </div>
                         <div className="text-center pt-4">
-                            <Link className="text-[10px] uppercase tracking-widest font-sans font-bold text-primary/40 hover:text-primary transition-colors" href="/menu/1">
+                            <Link className="text-[10px] uppercase tracking-widest font-sans font-bold text-primary/40 hover:text-primary transition-colors" href="/menu">
                                 Continue Shopping
                             </Link>
                         </div>
